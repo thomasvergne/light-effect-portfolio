@@ -46,7 +46,7 @@ function useLocalStorage(key: string, initialValue: boolean) {
 export default function Index() {
   const names = ["memorable", "accessible", "responsive", "beautiful"];
   const [randomName, setRandomName] = useState("beautiful");
-  const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
+  const [darkMode, setDarkMode] = useLocalStorage('darkMode', true);
   const ToggleIcon = darkMode ? IconSun : IconMoon;
 
   useEffect(() => {
@@ -67,19 +67,19 @@ export default function Index() {
   }, [darkMode]);
 
   return <>
-    <main className="">
+    <main className="relative">
       {/* Bottom-left light */}
-      <img src="/light3.svg" className="absolute -bottom-16 md:-bottom-2/3 -left-1/2 object-cover w-full -z-10 opacity-50" alt="" />
+      <img src="/light3.svg" className="absolute inset-0 -bottom-16 md:-bottom-2/3 -left-1/2 object-cover w-full -z-10 opacity-50" alt="" />
 
       {/* Centered light */}
-      <img src="/light.svg" className="absolute top-56 sm:top-24 md:-top-0 lg:-top-16 xl:-top-32 object-cover opacity-50 w-full -z-10" alt="" />
+      <img src="/light.svg" className="absolute inset-0 top-56 sm:top-24 md:-top-0 lg:-top-16 xl:-top-32 object-cover opacity-50 w-full -z-10" alt="" />
 
       {/* Top-right light */}
-      <img src="/light2.svg" className="absolute -top-64 md:-top-2/3 -right-1/2 object-cover opacity-50 w-full -z-10" alt="" />
+      <img src="/light2.svg" className="absolute inset-0 -top-64 md:-top-2/3 -right-1/2 object-cover opacity-50 w-full -z-10" alt="" />
 
-      <header className="grid grid-rows-12 h-screen backdrop-blur-md relative">
-        <img src="/line.svg" className="absolute inset-0 w-full h-full object-cover opacity-25 -z-20" alt="" />
-        <section className="row-span-11 grid grid-cols-24 place-items-center">
+      <img src="/line.svg" className="absolute inset-0 w-full h-full object-cover opacity-25 -z-20" alt="" />
+      <header className="grid grid-rows-12 h-screen backdrop-blur-md relative p-4">
+        <section className="row-span-11 grid grid-cols-12 place-items-center w-full h-full">
           <aside className="col-span-1 rotated flex gap-x-8">
             <AsideLink name="home" href="/" />
             <AsideLink name="about" href="#about" />
@@ -88,7 +88,7 @@ export default function Index() {
             <AsideLink name="contact" href="#contact" />
           </aside>
 
-          <article className="col-span-22">
+          <article className="col-span-10">
             <h1 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-neutral-800 dark:text-white text-center">
               I Create <span className="font-serif bg-gradient-to-tr from-pink-400 to-red-500 bg-clip-text text-transparent relative z-10 pr-4">{randomName}</span><br />
               web experiences.
@@ -97,8 +97,7 @@ export default function Index() {
 
           <div className="col-span-1 relative">
             <button className="rotated text-neutral-800/70 dark:text-white/70 font-mono inline-flex items-center gap-x-2" onClick={toggleDarkMode}>
-              <ToggleIcon size={32} />
-              <span className="hidden md:block">Toggle {darkMode ? 'light' : 'dark'} mode</span>
+              <span>Toggle {darkMode ? 'light' : 'dark'} mode</span>
             </button>
           </div>
         </section>
