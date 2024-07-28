@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { IconBrandDiscordFilled, IconBrandGithub, IconBrowser, IconLanguage, IconMoon, IconSun } from "@tabler/icons-react";
+import { IconBrandDiscordFilled, IconBrandGithub, IconBrandLinkedin, IconBrowser, IconLanguage, IconMoon, IconSun } from "@tabler/icons-react";
 import { useEffect, useMemo, useState } from "react";
 import Line2 from '~/assets/line2';
 import Line3 from '~/assets/line3';
@@ -294,6 +294,11 @@ export default function Index() {
             <li className="dark:text-white dark:bg-white/20 text-neutral-800 bg-black/5 hover:bg-black/10 p-1.5 rounded-lg dark:hover:bg-white/25">
               <a href="https://discordapp.com/users/766231131720646666">
                 <IconBrandDiscordFilled size={32} />
+              </a>
+            </li>
+            <li className="dark:text-white dark:bg-white/20 text-neutral-800 bg-black/5 hover:bg-black/10 p-1.5 rounded-lg dark:hover:bg-white/25">
+              <a href="https://www.linkedin.com/in/thomasvrgn/">
+                <IconBrandLinkedin size={32} />
               </a>
             </li>
           </ul>
